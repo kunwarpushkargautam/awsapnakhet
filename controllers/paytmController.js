@@ -193,7 +193,7 @@ exports.paytmCallback = async (req, res) => {
     );
   } else {
     message = "failed";
-     thankRetryMsg = "Retry again Or with sabPaisa if payment failed. ";
+     thankRetryMsg = "Retry again Or with sabPaisa ";
     let updatePaymentInCart = await CustomerCart.findOneAndUpdate(
       { _id: userDbId },
       {
@@ -244,7 +244,7 @@ exports.paytmCallback = async (req, res) => {
         html: `<h2>Greetings from Apna Khet Bagan Foundtion</h2>
             <p>Order with payment id : ${paytmPaymDetail.txnId} ${strmsg} is "${message}" of total cost  ${result.totalCost} via Paytm</p>
             <p>${thankRetryMsg}</p>
-            <img src="cid:uniq-greet.jpeg" style="width:250px;" alt="greeting image" />
+            <img src="cid:uniq-greet.jpeg"  alt="greeting image" />
       `,
         attachments: [
           {

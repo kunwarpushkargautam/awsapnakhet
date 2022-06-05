@@ -279,11 +279,9 @@ exports.postSpRes = async (req, res) => {
             from: "no-reply@apnakhet.org",
             subject: "Order Status",
             html: `<h2>Greetings from Apna Khet Bagan Foundtion</h2>
-            <p>We have received payments with payment id : ${sabPaisaPaymDetail.txnId} </p>
-            <p>${strmsg}</p>
-            <p>of Total Amount  ${result.totalCost} via SabPaisa </p>
+            <p>We have received payments with payment id : ${sabPaisaPaymDetail.txnId} ${strmsg} of Total Amount  ${result.totalCost} via SabPaisa </p>
             <p>We are heartly thankful to You for purchasing from us</p>
-            <img src="cid:uniq-greet.jpeg" style="width:250px;" alt="greeting image" />
+            <img src="cid:uniq-greet.jpeg"  alt="greeting image" />
       `,
             attachments: [
               {

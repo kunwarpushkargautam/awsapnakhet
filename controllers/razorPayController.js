@@ -115,7 +115,7 @@ exports.razorPayOrderResponse = async (req, res) => {
     let thankRetryMsg;
     if (failpayid !== undefined) {
       message = "failed";
-       thankRetryMsg = " Retry again Or with sabPaisa if payment failed.  ";
+       thankRetryMsg = " Retry again Or with sabPaisa.";
       let updatePaymentInCart = await CustomerCart.findOneAndUpdate(
         { _id: userDbId },
         {
@@ -164,10 +164,9 @@ exports.razorPayOrderResponse = async (req, res) => {
       to: tosendEmail,
       subject: "Order status",
       html: `<h3>Greetings from Apna Khet Bagan Foundtion</h3>
-            <p>Order with payment id : ${razorpay_payment_id} ${strmsg} is ${message}</p>
-            <p>of Total Amount  ${amountPaid} via RazorPay </p>
+            <p>Order with payment id : ${razorpay_payment_id} ${strmsg} is ${message} of Total Amount  ${amountPaid} via RazorPay </p>
             <p>${thankRetryMsg}</p>
-            <img src="cid:uniq-greet.jpeg" style="width:250px;" alt="greeting image" />
+            <img src="cid:uniq-greet.jpeg"  alt=" apnakhet.in greeting image" />
       `,
     };
 
