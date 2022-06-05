@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    {{>head}}
+
+<body>
+    <!-- ==================Navigation Started================================== -->
+    {{>navbar}}
+    <!-- ==========================Navigatioin Ended================================ -->
+    <!-- ==========================About Start================================ -->
+    <div class="container row justify-content-center mx-auto">
+        <div class="col-11 col-md-8 my-3">
+            <h1 class="text-center">Transaction Details</span></h1>
+            <div class="">
+            <table class="table table-sm table-striped border table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Parameter</th>
+                        <th scope="col">Value</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td class="">Timestamp</td>
+                        <td class="">{{parsedResponse.body.txnDate}}</td>
+
+                    </tr>
+                    <tr>
+                        <td class="">Order Id</td>
+                        <td class="">{{parsedResponse.body.orderId}}</td>
+                    </tr>
+                    <tr>
+                        <td class="">Paytm transacId</td>
+                        <td  class="text-break">{{parsedResponse.body.txnId}}</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="">Status</td>
+                        <td class="">{{parsedResponse.body.resultInfo.resultMsg}}</td>
+                    </tr>
+                    <tr>
+                        <td class="">Amount Deducted</td>
+                        <td class="">₹ {{parsedResponse.body.txnAmount}}</td>
+                    </tr>
+                    <tr>
+                        <td class="">Card Name</td>
+                        <td class="">{{parsedResponse.body.cardScheme}}</td>
+                    </tr>
+                    <tr>
+                        <td class="">Payment Mode</td>
+                        <td class="">{{parsedResponse.paymentMode:}}</td>
+                    </tr>
+
+                </tbody>
+            </table></div>
+
+        </div>
+        <div class="col-11 col-md-8 text-center"><a href="/" class="btn border ">Go Home</a></div>
+        
+
+
+
+    </div>
+
+
+    <!-- ==========================About Ended================================ -->
+
+
+
+    {{>footer}}
+    {{>cdnscript}}
+
+</body>
+
+</html>

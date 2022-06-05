@@ -1,0 +1,83 @@
+<script>
+  let DemandFruitProducts = [
+    {
+      productid: "d5",
+      name: "BAMBAI MANGO ( बम्बई )",
+      //price: 800,
+      priceInfo: "whatsapp for best price",
+      image: "/images/bam.jpg",
+      info: "One box contains 4 Kg green (ready to ripen) premium quality Bambai mango. We are not using any chemical/gas for ripening it. Mango naturally ripen in your home. PLEASE NOTE - We are not using any type of chemical/gas after harvest, so sometimes black spots my be appears on the skin of fruit. This is the beauty of natural products, we have to bear this",
+      incart: 0,
+      pinfo: " ",
+    },
+    {
+      productid: "d6",
+      name: "ZARDA/ZARDALU (जर्दा/जर्दालू)",
+      //price: 1000,
+      priceInfo: "whatsapp for best price",
+      image: "/images/jard.jpg",
+      info: "One box contains 4 Kg green (ready to ripen) premium quality Zarda mango. We are not using any chemical/gas for ripening it. Mango naturally ripen in your home. PLEASE NOTE - We are not using any type of chemical/gas after harvest, so sometimes black spots my be appears on the skin of fruit. This is the beauty of natural products, we have to bear this",
+      incart: 0,
+      pinfo: " ",
+    },
+    {
+      productid: "d7",
+      name: "SHUKUL (शुकुल)",
+      //price: 1300,
+      priceInfo: "whatsapp for best price",
+      image: "/images/sukul.jpeg",
+      info: "One box contains 4 Kg green (ready to ripen) premium quality Sukul mango. We are not using any chemical/gas for ripening it. Mango naturally ripen in your home. PLEASE NOTE - We are not using any type of chemical/gas after harvest, so sometimes black spots my be appears on the skin of fruit. This is the beauty of natural products, we have to bear this",
+      incart: 0,
+      pinfo: " ",
+    }
+  ];
+
+
+
+  let populateFruitDemandCard = () => {
+    let demandCardList = document.getElementById("fruitlistDemand");
+    const productCardHtml = DemandFruitProducts.map((product, i) => {
+      return `<div class="nodecoration col-lg-3 col-xl-2 col-md-4 col-sm-6 col-11  p-2 wow animate__animated animate__zoomIn">
+        <a href="" target="_blank">
+            <div class="card border-0 shadow py-3 ">
+                <div class="card-img pt-2 mx-auto zoomonhover  ">
+                    <img src="${product.image}" class="img-width  container-fluid " alt="">
+                </div>
+                <div class="card-body mx-auto text-center py-0">
+                    <h5 class=" my-1 text-secondary">${product.name}</h5>
+                    <a href="" class="infotag" data-bs-toggle="modal" data-bs-target="#exampleModaldemandfruit${i}"   title=""><i class="fa-solid fa-circle-info  "></i><span
+                            class="px-1">info</span></a>
+                    <p class="text-muted my-0 ">Fresh and Natural  products. All are chemical residue free.<br> ${product.pinfo}</p>
+                    <a href="https://wa.me/+919262290959/?text=Hello%20there.%20I%20need%20information%20about%20'${product.name}'." target="_blank"><p class="text-bold"><i class="fa-solid fa-circle-info"></i><span
+                            class="px-1">${product.priceInfo}</span></p></a>
+
+                </div>
+                <a href="https://wa.me/+919262290959/?text=Hello%20there.%20I%20want%20to%20demand%20this%20product.%20So%20I%20need%20information%20about%20'${product.name}'." target="_blank" class=" text-center   btncustom1 mx-3 "><i class="fa-solid fa-cart-plus"></i> Demand</a>
+            </div>
+        </a>
+    </div>
+    <div class="modal fade" id="exampleModaldemandfruit${i}" tabindex="-1" aria-labelledby="exampleModalLabelFruit${i}" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-success" id="exampleModalLabelFruit${i}">${product.name}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>${product.info}
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">ok</button>
+                </div>
+            </div>
+        </div>
+    </div>`;
+    });
+
+    if (demandCardList) {
+      demandCardList.innerHTML += productCardHtml.toString().replaceAll(",", "");
+    }
+  }
+  populateFruitDemandCard();
+</script>
